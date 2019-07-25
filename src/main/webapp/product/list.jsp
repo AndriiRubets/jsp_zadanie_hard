@@ -19,6 +19,8 @@
     <tr>
         <th style="width: 150px;">ID</th>
         <th style="width: 150px;">Name</th>
+        <th style="width: 150px;">INVENTORIES</th>
+        <th style="width: 150px;">Name</th>
     </tr>
     <% List<Product> products = (List<Product>) request.getAttribute("productList");
         for (int i = 0; i < products.size(); i++) {
@@ -28,7 +30,7 @@
             out.print("<td>" + p.getId() + "</td>");
             out.print("<td>" + p.getName() + "</td>");
             out.print("<td>" +
-                    "<a href=\"/inventory/list?productId="+p.getId()+"\">Inventories</a>"+
+                    "<a href=\"/inventory/list?productId="+p.getId()+"\">See all Inventories</a>"+
                     "</td>");
             out.print("<td>" +
                     "<a href=\"/inventory/add?productId="+p.getId()+"\">Add inventory</a>"+
