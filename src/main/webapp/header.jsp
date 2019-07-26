@@ -21,5 +21,8 @@
         <td>
             <a href="/invoice/list">Invoice List</a>
         </td>
+        <td>
+            <a href="/productSale/list">Sales List</a>
+        </td>
     </tr>
 </table>

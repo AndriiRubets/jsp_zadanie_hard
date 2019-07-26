@@ -21,6 +21,8 @@
         <th style="width: 150px;">ID</th>
         <th style="width: 150px;">Invoice Col</th>
         <th style="width: 150px;">Date Arrived</th>
+        <th style="width: 150px;">SALES LIST</th>
+        <th style="width: 150px;">ADD LIST</th>
     </tr>
     <% List<Invoice> invoices = (List<Invoice>) request.getAttribute("invoiceList");
         for (int i = 0; i < invoices.size(); i++) {
@@ -30,6 +32,13 @@
             out.print("<td>" + invoice.getId() + "</td>");
             out.print("<td>" + invoice.getInvoicecol() + "</td>");
             out.print("<td>" + invoice.getSaleDate() + "</td>");
+            out.print("<td>" +
+                    "<a href=\"/productSale/list?invoiceId="+invoice.getId()+"\">See all Product Sales</a>"+
+                    "</td>");
+            out.print("<td>" +
+                    "<a href=\"/productSale/add?invoiceId="+invoice.getId()+"\">Add Sale</a>"+
+                    "</td>");
+            out.print("</tr>");
         }
     %>
 </table>

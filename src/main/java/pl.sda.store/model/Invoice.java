@@ -4,10 +4,13 @@ package pl.sda.store.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @Entity
@@ -27,4 +30,9 @@ public class Invoice implements IBaseEntity {
 
     @ManyToOne
     Client client;
+
+    @ToString.Exclude
+    @OneToMany(mappedBy = "invoice", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @Cascade(org.hibernate.annotations.CascadeType.REMOVE)
+    private List<ProductSale> productSales;
 }

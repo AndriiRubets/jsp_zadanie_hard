@@ -15,6 +15,7 @@
         <mapping class="pl.sda.store.model.Inventory"/>
         <mapping class="pl.sda.store.model.Client"/>
         <mapping class="pl.sda.store.model.Invoice"/>
+        <mapping class="pl.sda.store.model.ProductSale"/>
 
     </session-factory>
 </hibernate-configuration>
